@@ -1,8 +1,7 @@
 import cv2
 import numpy as np
 
-fixed_corners = []
-tiles = {}
+
 def detect_and_label_corners(image):
     global fixed_corners
     global tiles
@@ -60,6 +59,4 @@ def detect_and_label_corners(image):
         text_position = (int(np.mean(corners[:, :, 0])), int(np.mean(corners[:, :, 1])))
         cv2.putText(labeled_image, tile, text_position, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 
-    return labeled_image
-
-
+    return labeled_image, tiles  # Return both the labeled image and the tiles dictionary
