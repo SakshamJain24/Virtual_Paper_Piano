@@ -1,9 +1,5 @@
 import cv2
-import numpy as np
-import os
 import threading
-from playsound import playsound  # Import playsound for playing audio files
-import mediapipe as mp
 from detect_and_label_corners import detect_and_label_corners
 from hand_tracking import hand_tracking
 from sound_utils import load_sound_files

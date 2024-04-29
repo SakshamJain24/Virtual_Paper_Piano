@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-from playsound import playsound
 import mediapipe as mp
 from sound_utils import play_sound
 
@@ -32,7 +31,7 @@ def hand_tracking(cap, tiles):
                     image_height, image_width, _ = frame.shape
                     x, y = int(landmark.x * image_width), int(landmark.y * image_height)
 
-                    # Check if finger tip is within any tile region
+                    # Check if fingertip is within any tile region
                     for tile_name, tile_corners in tiles.items():
                         # Assuming tile_corners are in clockwise order
                         if cv2.pointPolygonTest(np.array(tile_corners), (x, y), False) >= 0:
