@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import mediapipe as mp
 from sound_utils import play_sound
+#Used multi-threading
 
 # Variable to store the currently active tile
 active_tile = None

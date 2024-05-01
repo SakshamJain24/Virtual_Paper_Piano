@@ -3,6 +3,7 @@ import threading
 from detect_and_label_corners import detect_and_label_corners
 from hand_tracking import hand_tracking
 from sound_utils import load_sound_files
+#Applied changes to the main file as well
 
 # Global variables
 fixed_corners = []
