@@ -33,6 +33,7 @@ def detect_and_label_corners(image):
     for i in range(num_tiles):
         # Calculate the indices for the corners of the tile
         start_index = i * 2
+        end_index = start_index + 4
 
         # Extract the corners for the current tile
         tile_corners = [fixed_corners[start_index], fixed_corners[start_index + 1],

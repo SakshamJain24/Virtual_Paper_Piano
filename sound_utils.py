@@ -1,20 +1,18 @@
-import os
-from playsound import playsound
+import pygame
 
-# Global variable to store sound files
+# Dictionary to store loaded sound files
 sound_files = {}
 
-
 def load_sound_files(tiles):
-    global sound_files
-    sounds_folder = "Sounds"  # Folder containing sound files
+    pygame.init()
     for tile_name in tiles:
-        sound_files[tile_name] = os.path.join(sounds_folder, f"{tile_name}.mp3")
-
+        sound_file = f"Sounds/{tile_name}.mp3"
+        sound_files[tile_name] = pygame.mixer.Sound(sound_file)
 
 def play_sound(tile_name):
     global sound_files
-    # Load the sound file if not already loaded
-    if tile_name not in sound_files:
-        return
-    playsound(sound_files[tile_name])
+    # Stop any currently playing sound
+    pygame.mixer.stop()
+    # Play the sound if it exists in the dictionary
+    if tile_name in sound_files:
+        sound_files[tile_name].play()
